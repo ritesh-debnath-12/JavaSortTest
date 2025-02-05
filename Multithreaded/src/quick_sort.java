@@ -1,5 +1,9 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 public class quick_sort {
-    
+    private static final int THREAD_COUNT = Runtime.getRuntime().availableProcessors();
     public static int partition(int[] arr, int low, int high)
     {
         int pivot = arr[high];
@@ -25,28 +29,27 @@ public class quick_sort {
             quick(arr, pi + 1, high);
         }
     }
+    /*
+     * Implemented Multithreading :)(03/02/2025)(@ a very young evening)
+     */
+
+    //1 File = 487 seconds (Single Threaded)
+    //10 Files = 30.01 seconds (Multithreaded + BufferedWriter)
     public static void main(String[] args) {
         long startTimeFull = System.nanoTime();
-        
-        /*
-         * I understand that Quicksort is faster than Bubble sort, but 1e6 arrays, nahh, that's a lot of arrays to sort
-         * at this point, multithreading is the only way to go, but since I am as illiterate as a rock, I won't( can't, *ahem*)
-         * 
-         * MORAL: Learning algos is cool, but god damn, I am not sorting 1e6 arrays with quicksort single threaded IRL 
-         */
-
-        //1 File = 487 seconds
+        ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
         for (int i = 1; i <= 10; i++) { 
-            int[][] arr = utils.parseArrayFromFile("input" + i + ".txt");
-            long startTime = System.nanoTime();
-            for (int j = 0; j < arr.length; j++) {
-                quick(arr[j], 0, arr[j].length - 1);
-                utils.writeArrayToFile(arr[j], "quick/output" + i + ".txt");
-            }
-            System.out.println("Output File " + i + " populated.");
-            System.out.println("Processing Time(ns): " + (System.nanoTime() - startTime) + " ns");
+            int fileIndex = i;
+            executor.execute(() -> utils.processFile(fileIndex, quick_sort::quick));
         }
-
+        executor.shutdown();
+        try {
+            executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+        } catch (InterruptedException e) {
+            System.out.println("Executor Interrupted!");
+            e.printStackTrace();
+        }
+        Runtime.getRuntime().gc();
         System.out.println("Full Processing Time(ns): " + (System.nanoTime() - startTimeFull) + " ns");
         System.out.println("Full Processing Time(s): " + (System.nanoTime() - startTimeFull) / 1e9 + " s");
     }
