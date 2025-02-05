@@ -6,16 +6,15 @@ import java.util.concurrent.TimeUnit;
 
 public class insertion_sort {
     private static final int THREAD_COUNT = Runtime.getRuntime().availableProcessors();
-    public static void insert(int[] arr){
-        int i = 1, j = 0;
-        while(i < arr.length){
-            j = i;
-            while(j>0 && arr[j-1]>arr[j]){
-                int tmp = arr[j];
-                arr[j] = arr[j - 1];
-                arr[j-1] = tmp;
+    public static void insert(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
             }
-            i++;
+            arr[j + 1] = key;
         }
     }
 
