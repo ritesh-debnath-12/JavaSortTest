@@ -25,7 +25,7 @@ public class bubble_sort {
         
         for(int i = 1; i<=10; i++){
             int fileIndex = i;
-            executor.execute(() -> utils.processFile(fileIndex, bubble_sort::bubble));
+            executor.execute(() -> utils.processFile("output/bubble/output", fileIndex, bubble_sort::bubble));
         }
 
         executor.shutdown();

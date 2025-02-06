@@ -40,12 +40,12 @@ public class quick_sort {
         ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
         for (int i = 1; i <= 10; i++) { 
             int fileIndex = i;
-            executor.execute(() -> utils.processFile(fileIndex, quick_sort::quick));
+            executor.execute(() -> utils.processFile("output/quick/output", fileIndex, quick_sort::quick));
         }
         executor.shutdown();
         try {
             executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             System.out.println("Executor Interrupted!");
             e.printStackTrace();
         }

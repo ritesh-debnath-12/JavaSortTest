@@ -21,12 +21,12 @@ public class insertion_sort {
         ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
         for(int i=1; i<=10; i++){
             final int fileIndex = i;
-            executor.execute(() -> utils.processFile(fileIndex, insertion_sort::insert));
+            executor.execute(() -> utils.processFile("output/insert/output", fileIndex, insertion_sort::insert));
         }
         executor.shutdown();
         try{
             executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
-        } catch (InterruptedException e){
+        } catch (Exception e){
             e.printStackTrace();
         }
         Runtime.getRuntime().gc();

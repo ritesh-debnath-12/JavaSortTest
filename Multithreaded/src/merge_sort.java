@@ -1,5 +1,3 @@
-// package Multithreaded.src; // wut?
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -64,12 +62,12 @@ public class merge_sort {
         ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
         for (int i = 1; i <= 10; i++) {
             int fileIndex = i;
-            executor.execute(() -> utils.processFile(fileIndex, merge_sort::mergeSort));
+            executor.execute(() -> utils.processFile("output/insert/output", fileIndex, merge_sort::mergeSort));
         }
         executor.shutdown();
         try {
             executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             System.out.println("Executor Interrupted!");
             e.printStackTrace();
         }
