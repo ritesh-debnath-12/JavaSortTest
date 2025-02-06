@@ -10,8 +10,10 @@ Feel free to use IDEs like [IntelliJ](https://www.jetbrains.com/idea/) and [Ecli
 If you are still having problems, watch a YouTube video or something, [this can be a good start](https://www.youtube.com/watch?v=SQykK40fFds).
 
 ## How to Run
-[Clone this repo to your computer](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), and [change directories](https://www.wikihow.com/Change-Directories-in-Command-Prompt) to whichever method you would like to test out(Multithreaded/ or Singlethreaded/)<br>
+[Clone this repo to your computer](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), and [change directories](https://www.wikihow.com/Change-Directories-in-Command-Prompt) to whichever method you would like to test out(Multithreaded/ or Singlethreaded/)<br><br>
+
 Both the directories are Java projects on their own, so you need to open your text editor or IDE in their root contexts(i.e Singlethreaded/ or Mulithreaded/). Being in the context of JavaSortTest will **not** work!<br>
+
 You can try cd, or if you are using VSCode or IntelliJ, you can just right-click within Singlethreaded(or the other), and choose "Open with Code" or "Open with IntelliJ", if its not present, well, you can directly open powershell or cmd from the explorer path.<br>
 
 PS: You should really include [VSCode](https://www.youtube.com/watch?v=4qspErFtm00)/[IntelliJ](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360005182840/comments/10494930377618)/etc in your file context, if its not present. 
