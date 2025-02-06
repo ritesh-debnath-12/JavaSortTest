@@ -10,7 +10,7 @@ Feel free to use IDEs like [IntelliJ](https://www.jetbrains.com/idea/) and [Ecli
 If you are still having problems, watch a YouTube video or something, [this can be a good start](https://www.youtube.com/watch?v=SQykK40fFds).
 
 ## How to Run
-[Clone this repo to your computer](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), and [change directories](https://www.wikihow.com/Change-Directories-in-Command-Prompt) to whichever method you would like to test out(Multithreaded/ or Singlethreaded/)<br><br>
+[Clone this repo to your computer](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), and [change directories](https://www.wikihow.com/Change-Directories-in-Command-Prompt) to whichever method you would like to test out(Multithreaded/ or Singlethreaded/)<br>
 
 Both the directories are Java projects on their own, so you need to open your text editor or IDE in their root contexts(i.e Singlethreaded/ or Mulithreaded/). Being in the context of JavaSortTest will **not** work!<br>
 
