@@ -1,5 +1,3 @@
-//package Multithreaded.src; // how come this is not working? why does SingleThreaded need this then?
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;

@@ -9,6 +9,12 @@ Feel free to use IDEs like [IntelliJ](https://www.jetbrains.com/idea/) and [Ecli
 
 If you are still having problems, watch a YouTube video or something, [this can be a good start](https://www.youtube.com/watch?v=SQykK40fFds).
 
+## How to Run
+Both the directories are Java projects on their own, so you need to open your text editor or IDE in their root contexts(i.e Singlethreaded/ or Mulithreaded/). Being in the context of JavaSortTest will **not** work!<br>
+You can try cd, or if you are using VSCode or IntelliJ, you can just right-click within Singlethreaded(or the other), and choose "Open with Code" or "Open with IntelliJ", if its not present, well, you can directly open powershell or cmd from the explorer path.<br>
+
+PS: You should really include [VSCode](https://www.youtube.com/watch?v=4qspErFtm00)/[IntelliJ](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360005182840/comments/10494930377618)/etc in your file context, if its not present. 
+
 ## Index
 1. Singlethreaded
    - [genFile.java](Singlethreaded/src/genFile.java)
@@ -56,6 +62,8 @@ To also fulfill my orginal report objective I have also provided a folder with s
 ### Data Generation
 
 The genFile.java class was developed to generate 10 input files, each containing 1e6 arrays of arbitrary length with unsorted elements. These input files were stored in the **input** directory.
+
+As of 06/02/25 genFile.java also handles automatic directory generation!
 
 ### Parsing Input Data
 

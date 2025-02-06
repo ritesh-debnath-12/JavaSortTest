@@ -33,8 +33,8 @@ public class quick_sort {
      * Implemented Multithreading :)(03/02/2025)(@ a very young evening)
      */
 
-    //1 File = 487 seconds (Single Threaded)
-    //10 Files = 30.01 seconds (Multithreaded + BufferedWriter)
+    //1 File = 490 seconds (Single Threaded)
+    //10 Files = 32.29 seconds (Multithreaded + BufferedWriter)
     public static void main(String[] args) {
         long startTimeFull = System.nanoTime();
         ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);

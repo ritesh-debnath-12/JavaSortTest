@@ -20,6 +20,31 @@ public class genFile {
         return arr;
     }
 
+    private static void generateSubdirectories(){
+        String subdirs[] = {"output/quick", "output/merge", "output/insert", "output/bubble"};
+        for(String subdir : subdirs){
+            new File(subdir).mkdir();
+            System.out.println(subdir + " folder generated");
+        }
+    }
+
+    private static void generateFolderHierarchy(){
+        if(new File("input").mkdir()){
+            System.out.println("input folder generated");
+        }
+        else{
+            System.out.println("input folder already exists, skipping");
+        }
+
+        if(new File("output").mkdir()){
+            System.out.println("output folder generated");
+            generateSubdirectories();
+        }
+        else{
+            System.out.println("output folder already exists, skipping");
+        }
+    }
+
     public static void generateInputFiles(String fileName) {
         try {
             long startTime = System.nanoTime();
@@ -54,6 +79,7 @@ public class genFile {
     public static void main(String[] args) {
         long startTime = System.nanoTime();
         ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
+        generateFolderHierarchy(); 
         for (int i = 0; i < 10; i++) {
             String fileName = "input" + (i + 1) + ".txt";
             executor.execute(() -> generateInputFiles(fileName));
